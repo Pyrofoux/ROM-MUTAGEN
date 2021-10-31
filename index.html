@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ROM MUTAGEN</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <script type="text/javascript" src="js/helper.js"></script>
+    <!--<script type="text/javascript" src="js/base64ArrayBuffer.js"></script> -->
+    <script type="text/javascript" src="js/seedrandom.min.js"></script>
+    <script type="text/javascript" src="js/FileSaver.js"></script>
+    <script type="text/javascript" src="js/jszip.min.js"></script>
+  </head>
+  <body>
+
+    <div id="main_block">
+
+      <h1>ROM MUTAGEN</h1>
+      <img id="logo" src="./logo2.png" />
+      <p>A handy tool to create mutated versions of a file. See this <a href="https://www.youtube.com/watch?v=Ove6z8zDsjE">video</a> for an example of what could happen when applied to a <span class="crypted" data-value="UG9rZW1vbg=="></span> Gold ROM file.</p>
+
+      <br/>
+      <h2>1. Upload a ROM to mutate</h2>
+        <div class="center"><input id="input_file" type="file" /></div>
+        <br/>
+      <p>It can work with any type of file, but we recommend you try it on a ROM of your favorite <span class="crypted" data-value="UG9rZW1vbg=="></span> game and then play it on an emulator.<br/><br/>
+      You don't have a ROM? Oh no, it would be a shame if you clicked this <a href="https://drive.google.com/drive/folders/1msNSpUdKa5QlBgWmiWTP1HLkKSerr4pG?usp=sharing">link</a> and didn't say anything to <span class="crypted" data-value="TmludGVuZG8="></span>, right?</p>
+
+      <br/>
+      <h2>2. Choose Mutation Rate</h2>
+        <div class="center"><input type="number" id="input_rate" value="0.001" max="1" min="0" step="0.001" onchange="updateForm();"></div>
+      <p>The chance for each byte to be mutated. <span class="crypted" data-value="R2FtZWJveQ=="></span> ROMs with a mutation rate greater than 0.001 will be likely to crash on boot.</p>
+
+
+      <br/>
+      <h2>3. Choose Mutation Area</h2>
+
+      <br/>
+      <input type="range" id="input_start" value="12" max="100" min="0" step="1" onchange="updateForm();"> -- Start mutations at <span id="start_percentage"></span>% of the file<br/>
+      <input type="range" id="input_end" value="100" max="100" min="0" step="1" onchange="updateForm();">  -- End mutations at <span id="end_percentage"></span>% of the file
+
+      <p>Only bytes in the selected portion of the file will be mutated. For <span class="crypted" data-value="UG9rZW1vbg=="></span> games, mutating bytes in the first 12% of the file will make mutants very likely to crash on boot.</p>
+
+      <br/>
+      <h2>4. Choose Random Seed</h2>
+      <div class="center"><input type="text" size="50" id="input_seed"  onchange="updateForm();" placeholder="ENTER RANDOM SEED" /></div>
+
+      <p>This seed will initialise the random number generator. We recommend using your favorite incantation or the name of a dead pet. Leaving it blank will use the current date and time.</p>
+
+      <br/>
+      <h2>5. Choose Number of Mutants</h2>
+      <div class="center"><input type="number" id="input_mutant" value="1" min="1" step="1"  onchange="updateForm();"></div>
+
+      <p>The number of different mutants to generate with your chosen parameters. Mutants have a high chance to crash on boot, so generate several ones to make sure you will have at least one with an interesting behavior.</p>
+
+      <br/>
+      <h2>6. Mutate!</h2>
+
+      <p>Your mutants should be downloaded shortly after pressing this button. If you chose to generate more than one, they will be put in a zip archive.</p>
+
+      <br/>
+      <div class="center"><input type="button" id="mutate_button" value="MUTATE" onclick="start_mutate();"/></div>
+
+    </div>
+
+
+        <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

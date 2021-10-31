@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'IBM';
+  src: url('./IBM_BIOS.woff') format('woff');
+}
+
+#logo
+{
+	width:100%;
+  height:100%;
+	object-fit: cover;
+}
+
+
+body
+{
+	background-color:#15156D;
+	color:#F2F2F2;
+	font-family: "IBM", Calibri, "Lucida Console","Lucida", Arial;
+	font-size:12px;
+}
+
+input
+{
+	font-family:"IBM";
+	font-size:12px;
+}
+
+
+#main_block
+{
+	width:50%;
+	display:block;
+	margin:auto;
+	border: solid 8px #F2F2F2;
+	padding:2.5%;
+}
+
+h1
+{
+	text-align:center;
+	font-size:24px;
+}
+
+h2
+{
+	color:#E2C531;
+}
+
+#input_mutant
+{
+	width: 5em;
+}
+
+#input_rate
+{
+	width:10em;
+}
+
+.center
+{
+  text-align:center;
+}
+
+a
+{
+  color:#CE0000;
+  text-decoration: none;
+}
+
+a:hover
+{
+  color:cyan;
+  text-decoration: none;
+}
+
+#input_file
+{
+  color:#CE0000;
+}
+
+#mutate_button
+{
+    border: solid 8px #CE0000;
+    background-color:#15156D;
+    color: #CE0000;
+    padding:10px;
+    text-align:center;
+    font-size:24px;
+}
+#mutate_button:hover
+{
+  border: solid 8px cyan;
+  color: cyan;
+  cursor:pointer;
+}
